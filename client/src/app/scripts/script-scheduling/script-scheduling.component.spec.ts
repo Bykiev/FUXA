@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ScriptSchedulingComponent } from './script-scheduling.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('ScriptSchedulingComponent', () => {
   let component: ScriptSchedulingComponent;
@@ -11,7 +13,23 @@ describe('ScriptSchedulingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScriptSchedulingComponent ]
+      declarations: [ 
+        ScriptSchedulingComponent,
+        TranslatePipe
+      ],
+      imports: [
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+            provide: MatDialogRef,
+            useValue: {}
+          },
+          {
+              provide: MAT_DIALOG_DATA,
+              useValue: {}
+          }
+      ]
     })
     .compileComponents();
   }));

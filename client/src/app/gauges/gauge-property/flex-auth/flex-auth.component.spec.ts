@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { FlexAuthComponent } from './flex-auth.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('FlexAuthComponent', () => {
   let component: FlexAuthComponent;
@@ -11,7 +13,14 @@ describe('FlexAuthComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FlexAuthComponent ]
+      declarations: [ 
+        FlexAuthComponent,
+        TranslatePipe
+      ],
+      imports: [ 
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

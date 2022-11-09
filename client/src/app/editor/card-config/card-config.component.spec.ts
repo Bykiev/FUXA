@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CardConfigComponent } from './card-config.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 describe('CardConfigComponent', () => {
   let component: CardConfigComponent;
@@ -11,7 +13,19 @@ describe('CardConfigComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardConfigComponent ]
+      declarations: [ CardConfigComponent ],
+      imports: [
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }]
     })
     .compileComponents();
   }));

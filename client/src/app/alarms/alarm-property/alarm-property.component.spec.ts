@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AlarmPropertyComponent } from './alarm-property.component';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('AlarmPropertyComponent', () => {
   let component: AlarmPropertyComponent;
@@ -11,7 +13,20 @@ describe('AlarmPropertyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlarmPropertyComponent ]
+      declarations: [ AlarmPropertyComponent ],
+      imports: [ 
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ],
+      providers: [{
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }
+      ]
     })
     .compileComponents();
   }));

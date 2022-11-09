@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TableCustomizerComponent } from './table-customizer.component';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('TableCustomizerComponent', () => {
   let component: TableCustomizerComponent;
@@ -11,7 +13,23 @@ describe('TableCustomizerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableCustomizerComponent ]
+      declarations: [ 
+        TableCustomizerComponent,
+        TranslatePipe
+      ],
+      imports: [
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }]
     })
     .compileComponents();
   }));

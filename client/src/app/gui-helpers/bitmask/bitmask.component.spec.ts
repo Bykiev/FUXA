@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { BitmaskComponent } from './bitmask.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('BitmaskComponent', () => {
   let component: BitmaskComponent;
@@ -11,7 +13,22 @@ describe('BitmaskComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BitmaskComponent ]
+      declarations: [ 
+        BitmaskComponent,
+        TranslatePipe
+      ],
+      imports: [
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }]
     })
     .compileComponents();
   }));

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { EnumToArrayPipe } from '../../../_helpers/utils';
 
 import {FlexEventComponent} from './flex-event.component';
 
@@ -8,7 +10,13 @@ describe('FlexEventComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FlexEventComponent]
+      declarations: [
+        EnumToArrayPipe,
+        FlexEventComponent
+      ],
+      imports: [
+        TranslateModule.forRoot()
+      ]
     })
       .compileComponents();
   }));

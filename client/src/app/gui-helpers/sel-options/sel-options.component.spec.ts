@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SelOptionsComponent } from './sel-options.component';
+import { FormsModule } from '@angular/forms';
 
 describe('SelOptionsComponent', () => {
   let component: SelOptionsComponent;
@@ -11,6 +12,7 @@ describe('SelOptionsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [ FormsModule ],
       declarations: [ SelOptionsComponent ]
     })
     .compileComponents();

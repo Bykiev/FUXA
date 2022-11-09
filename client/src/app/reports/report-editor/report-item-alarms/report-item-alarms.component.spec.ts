@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ReportItemAlarmsComponent } from './report-item-alarms.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
+import { EnumToArrayPipe } from '../../../_helpers/utils';
 
 describe('ReportItemAlarmsComponent', () => {
   let component: ReportItemAlarmsComponent;
@@ -11,7 +14,22 @@ describe('ReportItemAlarmsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReportItemAlarmsComponent ]
+      declarations: [ 
+        EnumToArrayPipe,
+        ReportItemAlarmsComponent 
+      ],
+      imports: [
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }]
     })
     .compileComponents();
   }));

@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TablePropertyComponent } from './table-property.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('TablePropertyComponent', () => {
   let component: TablePropertyComponent;
@@ -11,7 +13,11 @@ describe('TablePropertyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TablePropertyComponent ]
+      declarations: [ TablePropertyComponent ],
+      imports: [ 
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

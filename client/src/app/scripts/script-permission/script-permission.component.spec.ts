@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ScriptPermissionComponent } from './script-permission.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('ScriptPermissionComponent', () => {
   let component: ScriptPermissionComponent;
@@ -11,7 +13,22 @@ describe('ScriptPermissionComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScriptPermissionComponent ]
+      declarations: [ 
+        ScriptPermissionComponent,
+        TranslatePipe
+      ],
+      imports: [
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }]
     })
     .compileComponents();
   }));

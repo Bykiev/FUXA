@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { RangeNumberComponent } from './range-number.component';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('RangeNumberComponent', () => {
   let component: RangeNumberComponent;
@@ -11,7 +12,13 @@ describe('RangeNumberComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RangeNumberComponent ]
+      declarations: [ 
+        RangeNumberComponent,
+        TranslatePipe
+     ],
+     imports: [
+        TranslateModule.forRoot()
+     ]
     })
     .compileComponents();
   }));

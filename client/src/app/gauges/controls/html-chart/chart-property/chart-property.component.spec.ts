@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ChartPropertyComponent } from './chart-property.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
+import { EnumToArrayPipe } from '../../../../_helpers/utils';
 
 describe('ChartPropertyComponent', () => {
   let component: ChartPropertyComponent;
@@ -11,7 +14,14 @@ describe('ChartPropertyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartPropertyComponent ]
+      declarations: [ 
+        ChartPropertyComponent,
+        EnumToArrayPipe
+      ],
+      imports: [ 
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

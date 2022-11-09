@@ -12,6 +12,7 @@ import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
 
 import { MatSelectSearchComponent } from './mat-select-search.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface Bank {
   id: string;
@@ -99,9 +100,13 @@ describe('MatSelectSearchComponent', () => {
         MatFormFieldModule,
         MatSelectModule,
         MatButtonModule,
-        MatInputModule
+        MatInputModule,
+        TranslateModule.forRoot()
       ],
-      declarations: [MatSelectSearchComponent, MatSelectSearchTestComponent]
+      declarations: [
+        MatSelectSearchComponent,
+        MatSelectSearchTestComponent
+      ]
     })
       .compileComponents();
   }));

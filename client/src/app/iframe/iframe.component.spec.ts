@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
 
 import { IframeComponent } from './iframe.component';
 
@@ -8,7 +9,8 @@ describe('IframeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ IframeComponent ]
+      declarations: [ IframeComponent ],
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));

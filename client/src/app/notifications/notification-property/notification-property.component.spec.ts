@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { NotificationPropertyComponent } from './notification-property.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('NotificationPropertyComponent', () => {
   let component: NotificationPropertyComponent;
@@ -11,7 +13,17 @@ describe('NotificationPropertyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotificationPropertyComponent ]
+      declarations: [ NotificationPropertyComponent ],
+      imports: [ TranslateModule.forRoot() ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }]
     })
     .compileComponents();
   }));

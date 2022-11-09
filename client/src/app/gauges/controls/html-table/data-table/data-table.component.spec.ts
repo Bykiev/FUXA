@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { DataTableComponent } from './data-table.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('DataTableComponent', () => {
   let component: DataTableComponent;
@@ -11,7 +13,11 @@ describe('DataTableComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataTableComponent ]
+      declarations: [ DataTableComponent ],
+      imports: [ 
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

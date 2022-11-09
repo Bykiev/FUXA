@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { HtmlIframeComponent } from './html-iframe.component';
-
 describe('HtmlIframeComponent', () => {
   let component: HtmlIframeComponent;
   let fixture: ComponentFixture<HtmlIframeComponent>;

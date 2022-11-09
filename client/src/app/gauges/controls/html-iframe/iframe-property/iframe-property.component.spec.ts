@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { IframePropertyComponent } from './iframe-property.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('IframePropertyComponent', () => {
   let component: IframePropertyComponent;
@@ -11,7 +12,10 @@ describe('IframePropertyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ IframePropertyComponent ]
+      declarations: [ IframePropertyComponent ],
+      imports: [
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

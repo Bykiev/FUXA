@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SvgSelectorComponent } from './svg-selector.component';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('SvgSelectorComponent', () => {
   let component: SvgSelectorComponent;
@@ -11,7 +12,13 @@ describe('SvgSelectorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SvgSelectorComponent ]
+      declarations: [ 
+        SvgSelectorComponent,
+        TranslatePipe
+      ],
+      imports: [ 
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

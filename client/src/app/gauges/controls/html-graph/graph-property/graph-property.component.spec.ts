@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { GraphPropertyComponent } from './graph-property.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
+import { EnumToArrayPipe } from '../../../../_helpers/utils';
 
 describe('GraphPropertyComponent', () => {
   let component: GraphPropertyComponent;
@@ -11,7 +14,14 @@ describe('GraphPropertyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GraphPropertyComponent ]
+      declarations: [ 
+        GraphPropertyComponent,
+        EnumToArrayPipe
+      ],
+      imports: [
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

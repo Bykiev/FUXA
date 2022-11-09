@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { HtmlSwitchPropertyComponent } from './html-switch-property.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 describe('HtmlSwitchPropertyComponent', () => {
   let component: HtmlSwitchPropertyComponent;
@@ -11,7 +12,16 @@ describe('HtmlSwitchPropertyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HtmlSwitchPropertyComponent ]
+      declarations: [ HtmlSwitchPropertyComponent ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+            provide: MAT_DIALOG_DATA,
+            useValue: {}
+        }]
     })
     .compileComponents();
   }));

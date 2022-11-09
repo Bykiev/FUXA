@@ -1,5 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 import {FlexVariablesMappingComponent} from './flex-variables-mapping.component';
 
@@ -9,7 +10,13 @@ describe('FlexVariableMappingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FlexVariablesMappingComponent]
+      declarations: [
+        FlexVariablesMappingComponent,
+        TranslatePipe
+      ],
+      imports: [
+        TranslateModule.forRoot()
+      ]
     })
       .compileComponents();
   }));

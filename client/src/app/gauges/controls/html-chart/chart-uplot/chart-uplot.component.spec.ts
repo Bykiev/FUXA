@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ChartUplotComponent } from './chart-uplot.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('ChartUplotComponent', () => {
   let component: ChartUplotComponent;
@@ -11,7 +13,11 @@ describe('ChartUplotComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartUplotComponent ]
+      declarations: [ ChartUplotComponent ],
+      imports: [
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ]
     })
     .compileComponents();
   }));

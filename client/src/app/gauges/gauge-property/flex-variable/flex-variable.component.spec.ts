@@ -1,5 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 import {FlexVariableComponent} from './flex-variable.component';
 
@@ -9,7 +11,14 @@ describe('FlexVariableComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FlexVariableComponent]
+      declarations: [
+        FlexVariableComponent,
+        TranslatePipe
+      ],
+      imports: [
+        MatDialogModule,
+        TranslateModule.forRoot()
+      ]
     })
       .compileComponents();
   }));
